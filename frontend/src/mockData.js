@@ -21,7 +21,7 @@ export const CITATIONS_DATA = {
     relevance: '99.2% RELEVANCE',
     postMatchText: 'Police spokespersons reported that traffic diversions had been enacted across three arterial junctions by midday, though no arrests had been recorded as of press time.',
     confidence: '99.2% (Exact Lexical & Semantic Match)',
-    justificationHtml: 'This passage directly validates the AI synthesis claim regarding the duration (<strong>"into their third week"</strong>) and scale (<strong>"several thousand participants gathered"</strong>) of the June 2019 demonstrations. No semantic drift or hallmarked extrapolation detected in corresponding synthetic sentence.',
+    justificationHtml: 'This passage directly validates the AI synthesis claim regarding the duration (<span class="cyan-term">"into their third week"</span>) and scale (<span class="cyan-term">["several thousand participants gathered"]</span>) of the June 2019 demonstrations. No semantic drift or hallmarked extrapolation detected in corresponding synthetic sentence.',
     tags: [
       { label: 'Temporal Alignment', value: 'Validated', icon: 'check' },
       { label: 'Geographic Scope', value: 'South Mumbai', icon: 'map' },
