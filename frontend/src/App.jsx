@@ -163,72 +163,21 @@ export default function App() {
         />
       )}
 
-      {/* TOP NAVIGATION BAR */}
-      <header className="mm-topbar">
-        {/* Brand Area */}
-        <div className="mm-brand-section">
-          <div className="mm-logo-mark">
-            <span className="mm-logo-symbol">MM</span>
-          </div>
-          <div className="mm-brand-text">
-            <div className="mm-brand-title">MediaMind</div>
-            <div className="mm-brand-sub">INVESTIGATIVE DESK v3.4</div>
-          </div>
-        </div>
-
-        {/* Global Stats & Attribution Pill */}
-        <div className="mm-topbar-center">
-          <div className="stat-index-badge">
-            <Database size={13} className="text-slate" />
-            <span>Index: 1989-2024 · 2,418,920 records indexed</span>
-          </div>
-
-          <div className="strict-attribution-pill">
-            <Shield size={13} className="text-cyan" />
-            <span>Strict Attribution: <strong>ACTIVE</strong></span>
-          </div>
-        </div>
-
-        {/* Natural Language Search Bar & Action Controls */}
-        <div className="mm-topbar-right">
-          <div 
-            className="mm-search-trigger"
-            onClick={() => setIsSearchModalOpen(true)}
-            role="button"
-            tabIndex={0}
-          >
-            <Search size={14} className="text-slate" />
-            <span className="search-placeholder">Search natural language or query syntax...</span>
-            <kbd className="kbd-shortcut">⌘K</kbd>
-          </div>
-
-          <button 
-            className="topbar-icon-btn" 
-            title="Toggle Split Dual-Pane View"
-            onClick={() => setIsDualPane(!isDualPane)}
-          >
-            <Layers size={16} />
-          </button>
-
-          <button 
-            className="topbar-icon-btn relative-bell" 
-            title="Archival Alerts (1 Pending Audit)"
-            onClick={() => showToast('1 Archival Notification: Node Asia-South-1 daily delta index completed.', 'info')}
-          >
-            <Bell size={16} />
-            <span className="notification-amber-dot"></span>
-          </button>
-
-          <div className="user-avatar-hex" title="Elena Rostova — Investigative Bureau">
-            <span className="avatar-initials">MM</span>
-          </div>
-        </div>
-      </header>
-
-      {/* APP BODY LAYOUT */}
-      <div className="mm-main-container">
+      {/* APP BODY LAYOUT - FULL HEIGHT SIDEBAR + MAIN COLUMN */}
+      <div className="mm-app-layout">
         {/* LEFT SIDEBAR NAVIGATION */}
         <aside className="mm-sidebar">
+          {/* Brand Header at top of sidebar */}
+          <div className="sidebar-brand-header">
+            <div className="mm-logo-mark">
+              <span className="mm-logo-symbol">MM</span>
+            </div>
+            <div className="mm-brand-text">
+              <div className="mm-brand-title">MediaMind</div>
+              <div className="mm-brand-sub">INVESTIGATIVE DESK v3.4</div>
+            </div>
+          </div>
+
           {/* New Search Action Button */}
           <div className="sidebar-action-wrap">
             <button 
@@ -348,8 +297,61 @@ export default function App() {
           </div>
         </aside>
 
-        {/* WORKSPACE CONTENT AREA */}
-        <main className="mm-workspace">
+        {/* RIGHT MAIN WORKSPACE COLUMN */}
+        <div className="mm-main-column">
+          {/* TOPBAR */}
+          <header className="mm-topbar">
+            {/* Global Stats & Attribution Pill */}
+            <div className="mm-topbar-left">
+              <div className="stat-index-badge">
+                <Database size={13} className="text-slate" />
+                <span>Index: 1989-2024 · 2,418,920 records indexed</span>
+              </div>
+
+              <div className="strict-attribution-pill">
+                <Shield size={13} className="text-cyan" />
+                <span>Strict Attribution: <strong>ACTIVE</strong></span>
+              </div>
+            </div>
+
+            {/* Natural Language Search Bar & Action Controls */}
+            <div className="mm-topbar-right">
+              <div 
+                className="mm-search-trigger"
+                onClick={() => setIsSearchModalOpen(true)}
+                role="button"
+                tabIndex={0}
+              >
+                <Search size={14} className="text-slate" />
+                <span className="search-placeholder">Search natural language or query syntax...</span>
+                <kbd className="kbd-shortcut">⌘K</kbd>
+              </div>
+
+              <button 
+                className="topbar-icon-btn" 
+                title="Toggle Split Dual-Pane View"
+                onClick={() => setIsDualPane(!isDualPane)}
+              >
+                <Layers size={16} />
+              </button>
+
+              <button 
+                className="topbar-icon-btn relative-bell" 
+                title="Archival Alerts (1 Pending Audit)"
+                onClick={() => showToast('1 Archival Notification: Node Asia-South-1 daily delta index completed.', 'info')}
+              >
+                <Bell size={16} />
+                <span className="notification-amber-dot"></span>
+              </button>
+
+              <div className="user-avatar-hex" title="Elena Rostova — Investigative Bureau">
+                <span className="avatar-initials">MM</span>
+              </div>
+            </div>
+          </header>
+
+          {/* WORKSPACE CONTENT AREA */}
+          <main className="mm-workspace">
           {/* Breadcrumb & Ledger Toolbar */}
           <div className="workspace-toolbar">
             <div className="breadcrumb-path">
@@ -764,5 +766,6 @@ export default function App() {
         </main>
       </div>
     </div>
+  </div>
   );
 }
