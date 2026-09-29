@@ -42,9 +42,10 @@ import FlagDiscrepancyModal from './components/FlagDiscrepancyModal';
 import Toast from './components/Toast';
 import ResearchResultsView from './components/ResearchResultsView';
 import ResearchDashboardView from './components/ResearchDashboardView';
+import UploadDocumentsView from './components/UploadDocumentsView';
 
 export default function App() {
-  const [activeNav, setActiveNav] = useState('dashboard');
+  const [activeNav, setActiveNav] = useState('upload');
   const [activeCitationId, setActiveCitationId] = useState(1);
   const [density, setDensity] = useState('High'); // 'High' | 'Comfortable'
   const [isDualPane, setIsDualPane] = useState(true);
@@ -180,15 +181,14 @@ export default function App() {
             </div>
           </div>
 
-          {/* New Search Action Button */}
+          {/* Action Button */}
           <div className="sidebar-action-wrap">
             <button 
               className="btn-new-search"
               onClick={() => setIsSearchModalOpen(true)}
             >
               <span className="btn-left">
-                <Search size={14} className="text-cyan" />
-                <span>New Search</span>
+                <span>Editorial Intelligence</span>
               </span>
               <kbd className="sidebar-kbd">^N</kbd>
             </button>
@@ -225,15 +225,12 @@ export default function App() {
               onClick={() => setActiveNav('archive')}
             >
               <FolderArchive size={15} />
-              <span>Archive</span>
+              <span>Archive Repository</span>
             </button>
 
             <button 
               className={`nav-item ${activeNav === 'upload' ? 'active' : ''}`}
-              onClick={() => {
-                setIsUploadModalOpen(true);
-                setActiveNav('upload');
-              }}
+              onClick={() => setActiveNav('upload')}
             >
               <Upload size={15} />
               <span>Upload Documents</span>
@@ -354,7 +351,15 @@ export default function App() {
 
           {/* WORKSPACE CONTENT AREA */}
           <main className="mm-workspace">
-            {activeNav === 'dashboard' ? (
+            {activeNav === 'upload' ? (
+              <UploadDocumentsView
+                onOpenPdf={(citationId) => {
+                  setActiveCitationId(citationId);
+                  setIsPdfModalOpen(true);
+                }}
+                showToast={showToast}
+              />
+            ) : activeNav === 'dashboard' ? (
               <ResearchDashboardView
                 onNavigateToResults={(query) => {
                   setActiveNav('results');
