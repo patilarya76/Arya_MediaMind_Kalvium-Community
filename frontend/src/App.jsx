@@ -40,9 +40,10 @@ import NewSearchModal from './components/NewSearchModal';
 import UploadModal from './components/UploadModal';
 import FlagDiscrepancyModal from './components/FlagDiscrepancyModal';
 import Toast from './components/Toast';
+import ResearchResultsView from './components/ResearchResultsView';
 
 export default function App() {
-  const [activeNav, setActiveNav] = useState('verification');
+  const [activeNav, setActiveNav] = useState('results');
   const [activeCitationId, setActiveCitationId] = useState(1);
   const [density, setDensity] = useState('High'); // 'High' | 'Comfortable'
   const [isDualPane, setIsDualPane] = useState(true);
@@ -352,8 +353,22 @@ export default function App() {
 
           {/* WORKSPACE CONTENT AREA */}
           <main className="mm-workspace">
-          {/* Breadcrumb & Ledger Toolbar */}
-          <div className="workspace-toolbar">
+            {activeNav === 'results' ? (
+              <ResearchResultsView
+                onNavigateToVerification={(citationId) => {
+                  setActiveCitationId(citationId);
+                  setActiveNav('verification');
+                }}
+                onOpenPdf={(citationId) => {
+                  setActiveCitationId(citationId);
+                  setIsPdfModalOpen(true);
+                }}
+                showToast={showToast}
+              />
+            ) : (
+              <>
+                {/* Breadcrumb & Ledger Toolbar */}
+                <div className="workspace-toolbar">
             <div className="breadcrumb-path">
               <span className="dossier-tag">INVESTIGATION DOSSIER</span>
               <span className="path-slash">/</span>
@@ -763,7 +778,9 @@ export default function App() {
               </section>
             )}
           </div>
-        </main>
+        </>
+      )}
+      </main>
       </div>
     </div>
   </div>
