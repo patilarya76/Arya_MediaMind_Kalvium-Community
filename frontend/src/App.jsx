@@ -41,9 +41,10 @@ import UploadModal from './components/UploadModal';
 import FlagDiscrepancyModal from './components/FlagDiscrepancyModal';
 import Toast from './components/Toast';
 import ResearchResultsView from './components/ResearchResultsView';
+import ResearchDashboardView from './components/ResearchDashboardView';
 
 export default function App() {
-  const [activeNav, setActiveNav] = useState('results');
+  const [activeNav, setActiveNav] = useState('dashboard');
   const [activeCitationId, setActiveCitationId] = useState(1);
   const [density, setDensity] = useState('High'); // 'High' | 'Comfortable'
   const [isDualPane, setIsDualPane] = useState(true);
@@ -353,7 +354,18 @@ export default function App() {
 
           {/* WORKSPACE CONTENT AREA */}
           <main className="mm-workspace">
-            {activeNav === 'results' ? (
+            {activeNav === 'dashboard' ? (
+              <ResearchDashboardView
+                onNavigateToResults={(query) => {
+                  setActiveNav('results');
+                }}
+                onOpenPdf={(citationId) => {
+                  setActiveCitationId(citationId);
+                  setIsPdfModalOpen(true);
+                }}
+                showToast={showToast}
+              />
+            ) : activeNav === 'results' ? (
               <ResearchResultsView
                 onNavigateToVerification={(citationId) => {
                   setActiveCitationId(citationId);
