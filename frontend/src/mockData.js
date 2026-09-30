@@ -240,3 +240,158 @@ export const CITATIONS_DATA = {
     targetClaim: 'demonstrations had evolved into continuous civil assemblies [8]'
   }
 };
+
+export const SEARCH_HISTORY_METRICS = {
+  loggedExecutions: 142,
+  averageGroundedSources: '12.4 Records',
+  attributionStrictness: '99.1% High',
+  vaultCustodySyncDocs: '2,418,920 Docs',
+  vaultCustodyPercent: 91,
+  totalQueries: 142,
+  activeFilterCount: 5,
+  auditRetentionDays: 365,
+};
+
+export const SEARCH_HISTORY_ITEMS = [
+  {
+    id: 'Q-2024-8841',
+    queryId: '#Q-2024-8841',
+    badges: [
+      { type: 'strict', text: 'STRICT 98% MATCH', icon: 'shield' },
+      { type: 'dossier', text: 'Saved to Dossier #C-01', icon: 'bookmark' }
+    ],
+    headline: '“What happened during the 2019 protests in Mumbai?”',
+    synopsis: '“Coverage confirms 14 major demonstrations across Azad Maidan and South Mumbai following clearance ratification... Transcripts sho...”',
+    timestamp: 'Today, 10:42 AM',
+    user: 'Elena Rostova',
+    isCurrentUser: true,
+    terminalId: 'DESK-04-B',
+    scope: '1990-2024 Scope',
+    primaryMedia: 'All Media Types (Print, Gazette, Wires)',
+    indexedTime: '14.6s',
+    groundedSourcesCount: 8,
+    matchBadge: { text: '98% Match', type: 'cyan' },
+    subCategories: [
+      { count: '6 Primary', color: 'cyan' },
+      { count: '2 Contextual', color: 'slate' }
+    ],
+    isSaved: true,
+    isStrict: true,
+    citationId: 1,
+    dateRange: '7days',
+    topic: 'mumbai'
+  },
+  {
+    id: 'Q-2024-8839',
+    queryId: '#Q-2024-8839',
+    badges: [
+      { type: 'confidential', text: 'CONFIDENTIAL DECLASS', icon: 'shield' },
+      { type: 'saved', text: 'Saved', icon: 'bookmark' }
+    ],
+    headline: '“India-China border diplomatic cables & summit notes (2015-2020)”',
+    synopsis: '“Bilateral agreements reached in Ufa and Wuhan showed shifting military buffer zone protocols prior to 2020. Special Representative...”',
+    timestamp: 'Yesterday, 4:18 PM',
+    user: 'Elena Rostova',
+    isCurrentUser: true,
+    terminalId: 'DESK-04-B',
+    scope: 'Confidential Memos',
+    primaryMedia: 'Foreign Ministry Cables & Dispatches',
+    indexedTime: '32.1s',
+    groundedSourcesCount: 21,
+    matchBadge: { text: '18 Passages', type: 'blue' },
+    subCategories: [
+      { count: '14 Diplomatic', color: 'cyan' },
+      { count: '7 Intelligence', color: 'slate' }
+    ],
+    isSaved: true,
+    isStrict: true,
+    citationId: 2,
+    dateRange: '7days',
+    topic: 'diplomatic'
+  },
+  {
+    id: 'Q-2024-8812',
+    queryId: '#Q-2024-8812',
+    badges: [
+      { type: 'shared', text: 'SHARED INQUIRY', icon: 'users' },
+      { type: 'saved', text: 'Saved', icon: 'bookmark' }
+    ],
+    headline: '“Interviews with climate activists and coastal ecologists before 2018”',
+    synopsis: '“Archive includes 6 unbroadcast taped interviews detailing informal fishing community displacements along Versova creek. Audio...”',
+    timestamp: '15 Sep 2024, 09:14 AM',
+    user: 'K. Sundaram (Shared)',
+    isCurrentUser: false,
+    terminalId: 'Desk: Southern Bureau',
+    scope: 'Audio Transcripts & Surveys',
+    primaryMedia: 'Field Audio, Cassettes & Microfilm',
+    indexedTime: '18.3s',
+    groundedSourcesCount: 14,
+    matchBadge: { text: '4 Audio Tapes', type: 'cyan' },
+    subCategories: [
+      { count: '4 Coastal Scans', color: 'cyan' },
+      { count: '10 Testimonies', color: 'slate' }
+    ],
+    isSaved: true,
+    isStrict: false,
+    citationId: 8,
+    dateRange: '30days',
+    topic: 'climate'
+  },
+  {
+    id: 'Q-2024-8798',
+    queryId: '#Q-2024-8798',
+    badges: [
+      { type: 'forensics', text: 'FINANCIAL FORENSICS', icon: 'alert' },
+      { type: 'unsaved', text: 'Unsaved', icon: 'bookmark-outline' }
+    ],
+    headline: '“Nagpur Fishery Syndicate wire transfers and shell bank correspondence 2014-2016”',
+    synopsis: '“Audit flags 3 physical audio reels and 12 leaked banking ledger slips showing off-book transactions routed through Seychelles registry...”',
+    timestamp: '11 Sep 2024, 16:30 PM',
+    user: 'Elena Rostova',
+    isCurrentUser: true,
+    terminalId: 'DESK-04-B',
+    scope: 'Physical Drawer 3 Vault',
+    primaryMedia: 'Ledger Slips, TELEX & Bank Logs',
+    indexedTime: '54.6s',
+    groundedSourcesCount: 9,
+    matchBadge: { text: 'Flagged High', type: 'amber' },
+    subCategories: [
+      { count: '3 Audio Reels', color: 'cyan' },
+      { count: '6 Bank Logs', color: 'slate' }
+    ],
+    isSaved: false,
+    isStrict: true,
+    citationId: 4,
+    dateRange: '30days',
+    topic: 'wire'
+  },
+  {
+    id: 'Q-2024-8760',
+    queryId: '#Q-2024-8760',
+    badges: [
+      { type: 'legal', text: 'LEGAL & GAZETTE', icon: 'scale' },
+      { type: 'saved', text: 'Saved', icon: 'bookmark' }
+    ],
+    headline: '“Municipal corporation public notice timeline for coastal freeway environmental impact assessment”',
+    synopsis: '“Found 4 gazette notices between Feb 2018 and March 2019 with disputed public objection windows. Legal briefs highlight non-...”',
+    timestamp: '03 Sep 2024, 11:05 AM',
+    user: 'Elena Rostova',
+    isCurrentUser: true,
+    terminalId: 'DESK-04-B',
+    scope: 'State Gazettes & Court',
+    primaryMedia: 'High Court Filings & Town Notices',
+    indexedTime: '9.2s',
+    groundedSourcesCount: 11,
+    matchBadge: { text: '100% Corroborated', type: 'corroborated' },
+    subCategories: [
+      { count: '4 Gazette Notices', color: 'cyan' },
+      { count: '7 Legal Writs', color: 'slate' }
+    ],
+    isSaved: true,
+    isStrict: true,
+    citationId: 3,
+    dateRange: '30days',
+    topic: 'gazette'
+  }
+];
+

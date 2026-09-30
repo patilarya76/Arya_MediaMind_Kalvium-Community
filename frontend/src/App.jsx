@@ -43,9 +43,10 @@ import Toast from './components/Toast';
 import ResearchResultsView from './components/ResearchResultsView';
 import ResearchDashboardView from './components/ResearchDashboardView';
 import UploadDocumentsView from './components/UploadDocumentsView';
+import SearchHistoryView from './components/SearchHistoryView';
 
 export default function App() {
-  const [activeNav, setActiveNav] = useState('upload');
+  const [activeNav, setActiveNav] = useState('history');
   const [activeCitationId, setActiveCitationId] = useState(1);
   const [density, setDensity] = useState('High'); // 'High' | 'Comfortable'
   const [isDualPane, setIsDualPane] = useState(true);
@@ -327,14 +328,6 @@ export default function App() {
               </div>
 
               <button 
-                className="topbar-icon-btn" 
-                title="Toggle Split Dual-Pane View"
-                onClick={() => setIsDualPane(!isDualPane)}
-              >
-                <Layers size={16} />
-              </button>
-
-              <button 
                 className="topbar-icon-btn relative-bell" 
                 title="Archival Alerts (1 Pending Audit)"
                 onClick={() => showToast('1 Archival Notification: Node Asia-South-1 daily delta index completed.', 'info')}
@@ -375,6 +368,17 @@ export default function App() {
                 onNavigateToVerification={(citationId) => {
                   setActiveCitationId(citationId);
                   setActiveNav('verification');
+                }}
+                onOpenPdf={(citationId) => {
+                  setActiveCitationId(citationId);
+                  setIsPdfModalOpen(true);
+                }}
+                showToast={showToast}
+              />
+            ) : activeNav === 'history' ? (
+              <SearchHistoryView
+                onNavigateToResults={(query) => {
+                  setActiveNav('results');
                 }}
                 onOpenPdf={(citationId) => {
                   setActiveCitationId(citationId);
